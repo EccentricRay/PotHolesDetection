@@ -1,4 +1,4 @@
-# Pothole Detection on Drone Video Footage (YOLOv8)
+# Pothole Detection on Image/Video Footage (YOLOv8)
 
 A streamlined pothole detection pipeline using YOLOv8, optimized for **(12GB VRAM)**. Trained on the [Multi-Weather Pothole Detection (MWPD)](https://www.kaggle.com/datasets/jocelyndumlao/multi-weather-pothole-detection-mwpd/data) dataset. Designed for drone video footage analysis — GPS integration will come later.
 
