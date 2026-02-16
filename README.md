@@ -1,6 +1,6 @@
-# Pothole Detection on Drone Video Footage (YOLOv8)
+# Pothole Detection on Image/Video Footage (YOLOv8)
 
-A streamlined pothole detection pipeline using YOLOv8, optimized for **RTX 3060 (12GB VRAM)**. Trained on the [Multi-Weather Pothole Detection (MWPD)](https://www.kaggle.com/datasets/jocelyndumlao/multi-weather-pothole-detection-mwpd/data) dataset. Designed for drone video footage analysis — GPS integration will come later.
+A streamlined pothole detection pipeline using YOLOv8, optimized for **(12GB VRAM)**. Trained on the [Multi-Weather Pothole Detection (MWPD)](https://www.kaggle.com/datasets/jocelyndumlao/multi-weather-pothole-detection-mwpd/data) dataset. Designed for drone video footage analysis — GPS integration will come later.
 
 Inspired by [yolo-training-template](https://github.com/computer-vision-with-marco/yolo-training-template), stripped down to only what you need for pothole detection.
 
@@ -143,7 +143,7 @@ python scripts/train.py --skip-download
 
 ### If You Get "Out of Memory" (OOM) Errors
 
-Your RTX 3060 has 12GB VRAM. If training crashes with CUDA OOM:
+If training crashes with CUDA OOM:
 
 ```bash
 # Option 1: Reduce batch size
@@ -246,7 +246,7 @@ This outputs: **mAP@50**, **mAP@50-95**, **Precision**, **Recall**, plus confusi
 | `epochs` | `100` | How many times to train over the full dataset |
 | `batch` | `16` | Images per training step. Lower if OOM |
 | `imgsz` | `640` | Input resolution. Higher = more accurate, more VRAM |
-| `amp` | `true` | Mixed precision. **Keep this ON** for 3060 |
+| `amp` | `true` | Mixed precision. **Keep this ON** |
 | `patience` | `20` | Stop early if no improvement for N epochs |
 | `flipud` | `0.2` | Vertical flip probability (good for aerial/drone views) |
 
@@ -256,7 +256,7 @@ This tells YOLO where images and labels are. The `path` field gets auto-updated 
 
 ---
 
-## GPU Optimization Notes (RTX 3060)
+## GPU Optimization Notes
 
 The project includes several optimizations for your hardware:
 
