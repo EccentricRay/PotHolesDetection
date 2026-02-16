@@ -63,6 +63,7 @@ def validate(args):
     results = model.val(
         data=dataset_yaml,
         split=args.split,
+        conf=args.conf,
         device=0 if torch.cuda.is_available() else "cpu",
         half=torch.cuda.is_available(),
         plots=True,       # Generate confusion matrix, PR curves, etc.
@@ -92,6 +93,12 @@ def parse_args():
         "--model", type=str, required=True,
         help="Path to trained model weights (.pt file)"
     )
+
+    parser.add_argument(
+        "--conf", type=float, default=0.001,
+        help="Confidence threshold (default: 0.001)"
+    )
+
     parser.add_argument(
         "--split", type=str, default="test",
         choices=["val", "test"],
