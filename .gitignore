@@ -1,0 +1,45 @@
+# ============================================================
+# .gitignore - Pothole Detection Project
+# ============================================================
+
+# Dataset (large files - download via Kaggle)
+data/
+
+# Training runs & outputs (large model weights)
+runs/
+
+# Test media files
+test_media/*.mp4
+test_media/*.avi
+test_media/*.mov
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kaggle
+.kaggle/
+
+# YOLO artifacts
+*.onnx
+*.engine
+*_ncnn_model/
