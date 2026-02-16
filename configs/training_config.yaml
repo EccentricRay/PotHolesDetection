@@ -22,9 +22,9 @@ model: yolov8m.pt
 # --- Training Parameters ---
 epochs: 100              # Total training epochs (100 is a solid starting point)
 patience: 20             # Early stopping: stop if no improvement for 20 epochs
-batch: 16                # Batch size (lower to 8 if OOM)
+batch: 8                # Batch size (lower to 8 if OOM)
 imgsz: 640               # Input image size (640 is standard for YOLO)
-workers: 8               # Data loading workers (match your CPU core count)
+workers: 2               # Data loading workers (match your CPU core count)
 
 # --- GPU Optimization---
 device: 0                # GPU index (0 = first GPU)
