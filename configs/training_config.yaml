@@ -1,34 +1,34 @@
 # ============================================================
 # training_config.yaml
 # ============================================================
-# Hyperparameters optimized for RTX 3060 12GB VRAM.
+# Hyperparameters optimized for 12GB VRAM.
 #
 # KEY DECISIONS:
-# - batch=16: Sweet spot for 3060 with YOLOv8m at 640px.
+# - batch=16: Sweet spot for 12GB with YOLOv8m at 640px.
 #   If you get OOM errors, lower to 8.
 # - imgsz=640: Standard YOLO input size, good balance of
 #   speed vs accuracy for pothole detection.
 # - workers=8: Parallel data loading threads. Adjust based
 #   on your CPU cores (check with: nproc).
 # - amp=True: Mixed precision training (FP16). Cuts VRAM
-#   usage ~40% and speeds up training on RTX 3060.
+#   usage ~40% and speeds up training.
 # ============================================================
 
 # --- Model Selection ---
 # Options: yolov8n (fastest), yolov8s, yolov8m (recommended), yolov8l, yolov8x (most accurate)
-# yolov8m is the best balance for 3060 12GB - accurate enough without OOM
+# yolov8m is the best balance for 12GB - accurate enough without OOM
 model: yolov8m.pt
 
 # --- Training Parameters ---
 epochs: 100              # Total training epochs (100 is a solid starting point)
 patience: 20             # Early stopping: stop if no improvement for 20 epochs
-batch: 16                # Batch size (lower to 8 if OOM on 3060)
+batch: 16                # Batch size (lower to 8 if OOM)
 imgsz: 640               # Input image size (640 is standard for YOLO)
 workers: 8               # Data loading workers (match your CPU core count)
 
-# --- GPU Optimization for RTX 3060 ---
+# --- GPU Optimization---
 device: 0                # GPU index (0 = first GPU)
-amp: true                # Mixed precision (FP16) - CRUCIAL for 3060 VRAM savings
+amp: true                # Mixed precision (FP16) - CRUCIAL for VRAM savings
 
 # --- Learning Rate ---
 lr0: 0.01                # Initial learning rate
