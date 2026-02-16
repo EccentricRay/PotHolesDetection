@@ -143,7 +143,7 @@ python scripts/train.py --skip-download
 
 ### If You Get "Out of Memory" (OOM) Errors
 
-Your RTX   has 12GB VRAM. If training crashes with CUDA OOM:
+If training crashes with CUDA OOM:
 
 ```bash
 # Option 1: Reduce batch size
